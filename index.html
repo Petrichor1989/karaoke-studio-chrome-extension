@@ -37,7 +37,7 @@ body { min-height: max(884px, 100dvh); }
 /* Mini Mode Styles */
 .panel-mini {
   width: 90px !important;
-  max-width: 90px !important;
+  max-width: 90p id="karaokePanel"x !important;
 }
 .panel-mini .main-content { display: none !important; }
 .panel-mini .mini-controls { display: flex !important; }
@@ -368,8 +368,7 @@ currentFilter = this.dataset.filter;
 });
 
 // Collapse/Mini Mode Toggle
-const panel = document.querySelector('.relative.w-full');
-const collapseBtn = document.getElementById('collapseBtn');
+const panel = document.getElementById('karaokePanel');const collapseBtn = document.getElementById('collapseBtn');
 collapseBtn.addEventListener('click', () => {
   panel.classList.toggle('panel-mini');
 });
