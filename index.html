@@ -32,33 +32,33 @@ body { min-height: max(884px, 100dvh); }
 </style>
 </head>
 <body class="bg-gray-800 flex justify-end font-display">
-<div class="relative w-full max-w-sm h-screen flex flex-col bg-[#1A1A1A] text-[#EAEAEA] border-l-2 border-[#C0C0C0] shadow-2xl overflow-y-auto">
-<div class="flex items-center justify-between p-4 border-b-2 border-b-[#C0C0C0]/50">
+<div class="relative w-full max-w-sm h-screen flex flex-col bg-[#000000] text-[#EAEAEA] border-l-2 border-[#DD0022] shadow-2xl overflow-y-auto">
+<div class="flex items-center justify-between p-4 border-b-2 border-b-[#DD0022]/50">
 <h2 class="text-white tracking-light text-xl font-bold leading-tight">Karaoke Studio</h2>
 <div class="flex items-center gap-2">
-<button id="settingsBtn" class="text-[#C0C0C0] hover:text-white">
+<button id="settingsBtn" class="text-[#DD0022] hover:text-white">
 <span class="material-symbols-outlined text-2xl">settings</span>
 </button>
-<button id="collapseBtn" class="text-[#C0C0C0] hover:text-white">
+<button id="collapseBtn" class="text-[#DD0022] hover:text-white">
 <span class="material-symbols-outlined text-2xl">unfold_less</span>
 </button>
 </div>
 </div>
 <div class="p-4 space-y-6">
 <div class="flex justify-center items-center gap-4">
-<button id="recordBtn" class="group relative flex items-center justify-center w-20 h-20 bg-[#1A1A1A] border-4 border-[#C0C0C0] rounded-full text-[#990000] hover:bg-[#333] transition-colors">
+<button id="recordBtn" class="group relative flex items-center justify-center w-20 h-20 bg-[#000000] border-4 border-[#DD0022] rounded-full text-[#990000] hover:bg-[#333] transition-colors">
 <span class="material-symbols-outlined text-5xl">fiber_manual_record</span>
 <div class="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-[#990000] ring-2 ring-transparent group-hover:ring-[#990000]/50"></div>
 </button>
-<button id="pauseBtn" class="flex items-center justify-center w-16 h-16 bg-[#1A1A1A] border-2 border-[#C0C0C0] rounded-full text-[#C0C0C0] hover:text-white hover:bg-[#333] transition-colors">
+<button id="pauseBtn" class="flex items-center justify-center w-16 h-16 bg-[#000000] border-2 border-[#DD0022] rounded-full text-[#DD0022] hover:text-white hover:bg-[#333] transition-colors">
 <span class="material-symbols-outlined text-4xl">pause</span>
 </button>
-<button id="stopBtn" class="flex items-center justify-center w-16 h-16 bg-[#1A1A1A] border-2 border-[#C0C0C0] rounded-full text-[#C0C0C0] hover:text-white hover:bg-[#333] transition-colors">
+<button id="stopBtn" class="flex items-center justify-center w-16 h-16 bg-[#000000] border-2 border-[#DD0022] rounded-full text-[#DD0022] hover:text-white hover:bg-[#333] transition-colors">
 <span class="material-symbols-outlined text-4xl">stop</span>
 </button>
 </div>
 <div>
-<div class="bg-black border-2 border-[#C0C0C0] rounded-lg p-2">
+<div class="bg-black border-2 border-[#DD0022] rounded-lg p-2">
 <canvas id="waveformCanvas" width="360" height="80" class="w-full"></canvas>
 </div>
 </div>
@@ -67,39 +67,37 @@ body { min-height: max(884px, 100dvh); }
 <div class="space-y-3" id="eqSliders">
 </div>
 <div class="flex flex-wrap gap-2 pt-4">
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Female">Female</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Male">Male</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Soprano">Soprano</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Mezzo">Mezzo</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Alto">Alto</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Countertenor">Countertenor</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Tenor">Tenor</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Baritone">Baritone</button>
-<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#C0C0C0] border border-[#C0C0C0] hover:bg-[#333]" data-preset="Bass">Bass</button>
+<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#DD0022] border border-[#DD0022] hover:bg-[#333]" data-preset="Soprano">Soprano</button>
+<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#DD0022] border border-[#DD0022] hover:bg-[#333]" data-preset="Mezzo">Mezzo</button>
+<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#DD0022] border border-[#DD0022] hover:bg-[#333]" data-preset="Alto">Alto</button>
+<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#DD0022] border border-[#DD0022] hover:bg-[#333]" data-preset="Countertenor">Countertenor</button>
+<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#DD0022] border border-[#DD0022] hover:bg-[#333]" data-preset="Tenor">Tenor</button>
+<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#DD0022] border border-[#DD0022] hover:bg-[#333]" data-preset="Baritone">Baritone</button>
+<button class="eq-preset flex-auto basis-1/4 text-xs font-bold py-1.5 px-2 rounded-md bg-transparent text-[#DD0022] border border-[#DD0022] hover:bg-[#333]" data-preset="Bass">Bass</button>
 </div>
 </div>
 <div>
 <h3 class="text-[#EAEAEA] text-lg font-bold leading-tight tracking-[-0.015em] px-1 pb-3">Effects</h3>
 <div class="grid grid-cols-2 gap-4">
-<div class="flex items-center justify-between bg-[#111] p-3 rounded-lg border border-[#C0C0C0]/50">
+<div class="flex items-center justify-between bg-[#000000] p-3 rounded-lg border border-[#DD0022]/50">
 <span class="font-medium text-sm">Live Monitor</span>
 <button class="effect-toggle relative w-12 h-6 flex items-center bg-[#990000] rounded-full p-1" data-effect="monitor" data-active="true">
 <div class="knob absolute w-5 h-5 bg-white rounded-full shadow-md transform translate-x-6 transition-transform"></div>
 </button>
 </div>
-<div class="flex items-center justify-between bg-[#111] p-3 rounded-lg border border-[#C0C0C0]/50">
+<div class="flex items-center justify-between bg-[#000000] p-3 rounded-lg border border-[#DD0022]/50">
 <span class="font-medium text-sm">Reverb</span>
-<button class="effect-toggle relative w-12 h-6 flex items-center bg-[#444] rounded-full p-1" data-effect="reverb" data-active="false">
+<button class="effect-toggle relative w-12 h-6 flex items-center bg-[#1A0000] rounded-full p-1" data-effect="reverb" data-active="false">
 <div class="knob absolute w-5 h-5 bg-white rounded-full shadow-md transform transition-transform"></div>
 </button>
 </div>
-<div class="flex items-center justify-between bg-[#111] p-3 rounded-lg border border-[#C0C0C0]/50">
+<div class="flex items-center justify-between bg-[#000000] p-3 rounded-lg border border-[#DD0022]/50">
 <span class="font-medium text-sm">Delay</span>
-<button class="effect-toggle relative w-12 h-6 flex items-center bg-[#444] rounded-full p-1" data-effect="delay" data-active="false">
+<button class="effect-toggle relative w-12 h-6 flex items-center bg-[#1A0000] rounded-full p-1" data-effect="delay" data-active="false">
 <div class="knob absolute w-5 h-5 bg-white rounded-full shadow-md transform transition-transform"></div>
 </button>
 </div>
-<div class="flex items-center justify-between bg-[#111] p-3 rounded-lg border border-[#C0C0C0]/50">
+<div class="flex items-center justify-between bg-[#000000] p-3 rounded-lg border border-[#DD0022]/50">
 <span class="font-medium text-sm">Compression</span>
 <button class="effect-toggle relative w-12 h-6 flex items-center bg-[#990000] rounded-full p-1" data-effect="compression" data-active="true">
 <div class="knob absolute w-5 h-5 bg-white rounded-full shadow-md transform translate-x-6 transition-transform"></div>
@@ -109,15 +107,15 @@ body { min-height: max(884px, 100dvh); }
 </div>
 <div>
 <h3 class="text-[#EAEAEA] text-lg font-bold leading-tight tracking-[-0.015em] px-1 pb-2">Webcam</h3>
-<div class="aspect-video bg-black rounded-lg border-2 border-[#C0C0C0] overflow-hidden">
+<div class="aspect-video bg-black rounded-lg border-2 border-[#DD0022] overflow-hidden">
 <video id="webcamPreview" class="w-full h-full object-cover" autoplay muted></video>
 </div>
 <div class="flex items-center gap-2 pt-3 overflow-x-auto pb-2 -mx-4 px-4">
 <button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#990000] text-white" data-filter="Vintage">Vintage</button>
-<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#444] text-[#EAEAEA] hover:bg-[#555]" data-filter="B&W">B&W</button>
-<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#444] text-[#EAEAEA] hover:bg-[#555]" data-filter="Neon">Neon</button>
-<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#444] text-[#EAEAEA] hover:bg-[#555]" data-filter="8-Bit">8-Bit</button>
-<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#444] text-[#EAEAEA] hover:bg-[#555]" data-filter="Sepia">Sepia</button>
+<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#1A0000] text-[#EAEAEA] hover:bg-[#555]" data-filter="B&W">B&W</button>
+<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#1A0000] text-[#EAEAEA] hover:bg-[#555]" data-filter="Neon">Neon</button>
+<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#1A0000] text-[#EAEAEA] hover:bg-[#555]" data-filter="8-Bit">8-Bit</button>
+<button class="webcam-filter flex-shrink-0 text-sm font-semibold py-2 px-4 rounded-full bg-[#1A0000] text-[#EAEAEA] hover:bg-[#555]" data-filter="Sepia">Sepia</button>
 </div>
 </div>
 <div id="previewSection" class="hidden">
@@ -139,8 +137,6 @@ let eqBands = [
 {name: 'Treble', freq: [1000,3000], value: 0.55}
 ];
 const vocalPresets = {
-Female: [0.55,0.4,0.5,0.7,0.6],
-Male: [0.7,0.55,0.5,0.5,0.45],
 Soprano: [0.4,0.3,0.7,0.75,0.7],
 Mezzo: [0.5,0.5,0.7,0.6,0.45],
 Alto: [0.6,0.55,0.55,0.45,0.3],
@@ -161,10 +157,10 @@ div.innerHTML = `
 <p class="eq-db text-[#EAEAEA] text-xs font-normal leading-normal">${dbVal > 0 ? '+' : ''}${dbVal}dB</p>
 </div>
 <div class="flex h-4 w-full items-center gap-4">
-<div class="flex h-1.5 flex-1 rounded-full bg-[#444]">
-<div class="eq-bar h-full rounded-full bg-[#C0C0C0]" style="width: ${band.value*100}%"></div>
+<div class="flex h-1.5 flex-1 rounded-full bg-[#1A0000]">
+<div class="eq-bar h-full rounded-full bg-[#DD0022]" style="width: ${band.value*100}%"></div>
 <div class="relative">
-<div class="eq-knob absolute -left-2.5 -top-2 size-5 rounded-full bg-[#990000] border-2 border-[#C0C0C0]" style="left: ${band.value*100-10}%"></div>
+<div class="eq-knob absolute -left-2.5 -top-2 size-5 rounded-full bg-[#990000] border-2 border-[#DD0022]" style="left: ${band.value*100-10}%"></div>
 </div>
 </div>
 </div>`;
@@ -176,10 +172,10 @@ document.querySelectorAll('.eq-preset').forEach(btn => {
 btn.addEventListener('click', function() {
 document.querySelectorAll('.eq-preset').forEach(b => {
 b.classList.remove('bg-[#990000]', 'text-white');
-b.classList.add('bg-transparent', 'text-[#C0C0C0]');
+b.classList.add('bg-transparent', 'text-[#DD0022]');
 });
 this.classList.add('bg-[#990000]', 'text-white');
-this.classList.remove('bg-transparent', 'text-[#C0C0C0]');
+this.classList.remove('bg-transparent', 'text-[#DD0022]');
 const preset = vocalPresets[this.dataset.preset];
 if (preset) {
 eqBands.forEach((band, i) => band.value = preset[i]);
@@ -271,12 +267,12 @@ const isActive = this.dataset.active === 'true';
 const knob = this.querySelector('.knob');
 if (isActive) {
 this.classList.remove('bg-[#990000]');
-this.classList.add('bg-[#444]');
+this.classList.add('bg-[#1A0000]');
 knob.classList.remove('translate-x-6');
 this.dataset.active = 'false';
 } else {
 this.classList.add('bg-[#990000]');
-this.classList.remove('bg-[#444]');
+this.classList.remove('bg-[#1A0000]');
 knob.classList.add('translate-x-6');
 this.dataset.active = 'true';
 }
@@ -302,10 +298,10 @@ document.querySelectorAll('.webcam-filter').forEach(btn => {
 btn.addEventListener('click', function() {
 document.querySelectorAll('.webcam-filter').forEach(b => {
 b.classList.remove('bg-[#990000]', 'text-white');
-b.classList.add('bg-[#444]', 'text-[#EAEAEA]');
+b.classList.add('bg-[#1A0000]', 'text-[#EAEAEA]');
 });
 this.classList.add('bg-[#990000]', 'text-white');
-this.classList.remove('bg-[#444]', 'text-[#EAEAEA]');
+this.classList.remove('bg-[#1A0000]', 'text-[#EAEAEA]');
 currentFilter = this.dataset.filter;
 });
 });
